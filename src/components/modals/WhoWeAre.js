@@ -1,7 +1,9 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import logoCar from '../../assets/logo_car.jpg';
+import logoCar from '../../assets/logo-trasparente.png';
+import siteName from '../../assets/hyperCar-Destine.png'
+import '../../styles/Modal.css';
 
 function WhoWeAre(props) {
   return (
@@ -12,16 +14,19 @@ function WhoWeAre(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Hyper Car
-        </Modal.Title>
+      <img className='logoModal' src={siteName} alt="Hyper Car" />
       </Modal.Header>
       <Modal.Body>
-        <img src ={logoCar} alt="logo car" />
+        <img className='logoModal' src ={logoCar} alt="logo car" />
         <h4>Our mission</h4>
         <p>
           We sell the cars of your dream. Buy it if you can!!
         </p>
+        <p>
+          You can find us in:
+        </p>
+        <p>Via Pinciana, 15</p>
+        <p>00156 Rome - Italy </p>
         
       </Modal.Body>
       <Modal.Footer>

@@ -1,16 +1,22 @@
-.carousel-image {
-    
-    object-fit: cover; /* Controlla il comportamento di ridimensionamento dell'immagine */
-    
-  }
+.carousel-centered {
+  height: 80vh;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  .light-text {
-    color: #FFF;
-    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #655858, 0 0 20px #090a09, 0 0 30px #18450b, 0 0 40px #132e0b, 0 0 55px #0f2608, 0 0 75px #14350b
+.carousel-image {
+  object-fit: cover;
+  /* Controlla il comportamento di ridimensionamento dell'immagine */
+
+}
+
+.light-text {
+  color: #FFF;
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #655858, 0 0 20px #090a09, 0 0 30px #18450b, 0 0 40px #132e0b, 0 0 55px #0f2608, 0 0 75px #14350b
     /*illumina il testo nelle slide del Carousel*/
-  }
+}
 
 .thumbnail {
-width: 250px;
-height: auto;
+  width: 250px;
+  height: auto;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -8,19 +8,19 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import carLogo from '../assets/logo-trasparente.png';
 import siteName from '../assets/hyperCar-Destine.png';
-import Modal from 'react-bootstrap/Modal';
 import '../styles/MyNav.css';
-import logoCar from '../assets/logo_car.jpg';
 import WhoWeAre from './modals/WhoWeAre';
 
-function navigationBar() {
 
-  const[modalShow, setModalShow] = useState(false); //per utilizzare il modale
+function NavigationBar() {
+
+  const [modalShow, setModalShow] = useState(false); //per utilizzare il modale, inizialmente non visibile
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
         <Navbar.Brand>
+          {/* l'immagine logo del sito è cliccabile e rimanda alla homepage */}
           <Link to="/">
             <img className='logo-img' src={carLogo} alt="Logo" />
           </Link>
@@ -32,30 +32,47 @@ function navigationBar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link> 
-              <Link to = "/">
-              <img className='siteName' src={siteName} alt="Site name" />
+            {/* il nome del sito è cliccabile e rimanda sulla homepage */}
+            <Nav.Link>
+              <Link to="/">
+                <img className='siteName' src={siteName} alt="Site name" />
               </Link>
-              </Nav.Link>
-              
-            <Nav.Link href="#action2">Our models</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Look inside</NavDropdown.Item>
+            </Nav.Link>
+
+            {/* riferimenti della navbar */}
+            <Nav.Link>
+              <Link to="/ImageGallery">
+                <Button variant="outline-success">
+                  Take a look to our models
+                </Button>
+              </Link>
+            </Nav.Link>
+
+            <Nav.Link>
+              <Link to="/BlogSection">
+                <Button variant="outline-success">
+                  Go to Users posts
+                </Button>
+              </Link>
+            </Nav.Link>
+            <Nav.Link href="#" ><Button variant="outline-success">Log In</Button></Nav.Link>
+
+            <NavDropdown title={<Button variant="outline-success">Links</Button>} id="navbarScrollingDropdown">
+              <NavDropdown.Item href="#action3"><Button variant="outline-success">Look inside</Button>
+              </NavDropdown.Item>
+
               <NavDropdown.Item href="#action4">
-                Drive it
+                <Button variant="outline-success">Drive it</Button>
               </NavDropdown.Item>
 
               <NavDropdown.Divider />
-              <NavDropdown.Item onClick={ ()=> setModalShow(true)}>
-                Who we are
+              <NavDropdown.Item onClick={() => setModalShow(true)}>
+                <Button variant="outline-success">Who we are</Button>
               </NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link href="#" disabled>
-              Log In
-            </Nav.Link>
           </Nav>
-          {/* <Form className="d-flex">
+          {/* { <Form className="d-flex">
             <Form.Control
               type="search"
               placeholder="Search"
@@ -63,14 +80,13 @@ function navigationBar() {
               aria-label="Search"
             />
             <Button variant="outline-success">Search</Button>
-          </Form> */}
+          </Form> } */}
         </Navbar.Collapse>
       </Container>
-      <WhoWeAre show={modalShow} onHide={()=> setModalShow(false)} />
-     ;
+      <WhoWeAre show={modalShow} onHide={() => setModalShow(false)} />
 
     </Navbar>
   );
 }
 
-export default navigationBar;
+export default NavigationBar;
