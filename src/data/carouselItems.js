@@ -1,7 +1,7 @@
 import Img1 from '../assets/laferrari002.jpg';
 import Img2 from '../assets/porscheGT3.jpg';
 import Img3 from '../assets/bugatti-mistral.jpg';
-import Img4 from '../assets/lycan-hypersport.jpg';
+import Img4 from '../assets/huracanCabrio.png';
 import '../styles/Carousel.css';
 
 export const carouselItems = [
@@ -32,9 +32,9 @@ export const carouselItems = [
 	{
 		className: "d-block w-100 carousel-image",
 		src: Img4,
-		alt: "Third slide",
-		captionTitle: "Choose your car",
-		captionDescription: "A lot of various model for your pleasure",
+		alt: "Fourth slide",
+		captionTitle: "Take away your dream",
+		captionDescription: "Don't miss this chance!",
 		id: 4,
 	},
 ];

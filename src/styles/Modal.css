@@ -1,5 +1,37 @@
 .logoModal {
     width: 250px;
     height: auto;
-    
+
+}
+
+.textStyle {
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: #FFF;
+    background-color: #232323;
+    text-shadow:
+        0 0 5px #FFF, 0 0 10px #FFF,
+        0 0 15px #FFF, 0 0 20px #49ff18,
+        0 0 30px #49FF18, 0 0 40px #49FF18,
+        0 0 55px #49FF18, 0 0 75px #49ff18
+}
+
+.addressStyle {
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+}
+
+.sliding-image {
+    /* Imposta l'iniziale posizione fuori dallo schermo verso sinistra */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    /* Imposta la velocità e il tipo di transizione */
+}
+
+/* Aggiungi questa classe se vuoi far apparire l'immagine quando il modale è aperto */
+.modal-open .sliding-image {
+    /* Imposta la posizione finale al centro o dove desideri */
+    transform: translateX(0);
 }

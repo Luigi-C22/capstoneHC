@@ -1,31 +1,59 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import SingleCard from './navigation/SingleCard'; 
+import AddPostModal from './modals/AddPostModal';
+import '../styles/BlogSection.css';
 
-const BlogSection = () => {
-  const [userPost, setUserPosts] = useState([]);
+
+function BlogSection() {
+  const [posts, setPosts] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    axios.get('/localhost:5050/posts') // endpoint degli annunci utenti
-      .then((response) => {
-        setUserPosts(response.data);
-      })
-      .catch((error) => {
-        console.error('Errore nella richiesta API:', error);
-      });
+    
+     fetch('http://localhost:5050/posts')
+       .then((response) => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then((data) => {
+        setPosts(data);
+    })
+        .catch((error) => {
+         console.error('Errore nella richiesta', error);
+       });
   }, []);
 
   return (
     <div>
-      {/* Visualizza gli annunci qui */}
-      {userPost.map((userPost) => (
-        <div key={userPost.id}>
-          {/* Visualizza i dettagli dell'annuncio */}
-          <h2>{userPost.title}ciao</h2>
-          <p>{userPost.description}</p>
-        </div>
-      ))}
+      <h1 className='titleStyle'> If you want to sell your old car, post here your offer</h1>
+
+      {/* Bottone per aprire il modale */}
+      <button className='formButton' onClick={() => setShowModal(true)}>Open form to publish</button>
+
+      {/* Visualizza le cards dei post */}
+
+      
+      <div className="card-container">
+        {posts.map((post) => (
+          <SingleCard key={post.id}
+           carBrand={post.carBrand} 
+           carName={post.carName}
+           carPicture={post.carPicture}
+           year={post.year}
+           price={post.price}
+           contact={post.contact}
+           description={post.description}
+           authorName={post.authorName}
+           />
+        ))}
+      </div>
+
+      {/* Modale per aggiungere un post */}
+      <AddPostModal show={showModal} onHide={() => setShowModal(false)} />
     </div>
   );
-};
+}
 
 export default BlogSection;

@@ -1,0 +1,58 @@
+.titleStyle {
+    text-align: center;
+    color: #FFF;
+    background-color: #232323;
+    text-shadow: 0 0 5px #FFF,
+        0 0 10px #FFF, 0 0 15px #FFF,
+        0 0 20px #49ff18, 0 0 30px #49FF18,
+        0 0 40px #49FF18, 0 0 55px #49FF18,
+        0 0 75px #49ff18
+}
+
+.formButton {
+
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    line-height: 24px;
+    padding: 12px;
+    border-radius: 9px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(to right, rgb(28, 164, 51) 0%,
+            rgb(35, 203, 74) 50%,
+            rgb(20, 117, 43) 100%);
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    border: 2px solid rgb(28, 164, 55);
+    display: inline-block;
+}
+
+.formButton:hover {
+    background: #1ca445;
+}
+
+.formButton:active {
+    background: #147530;
+}
+
+.galleryStyle {
+    object-fit: scale-down;
+    margin: 2%;
+    border-radius: 8%;
+    -webkit-box-shadow: 0px 0px 11px 4px rgba(0, 0, 0, 0.86);
+    box-shadow: 0px 0px 11px 4px rgba(0, 0, 0, 0.86);
+    
+}
+
+.galleryStyle {
+    background-color: #1C6EA4;
+    display: block;
+    margin: 50px auto 0;
+    width: 500px;
+    height: 300px;
+    color: #FFF;
+    padding: 10px;
+}

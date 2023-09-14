@@ -6,6 +6,7 @@ import Welcome from './components/Welcome';
 import MyFooter from './components/MyFooter';
 import ImageGallery from './components/ImageGallery';
 import ImageDetail from './components/ImageDetail';
+import BlogSection from './components/BlogSection';
 
 
 function App() {
@@ -13,9 +14,10 @@ function App() {
     <Router>
       <NavigationBar />
       <Routes>
-        <Route path="/" element = {<Welcome /> } />
-        <Route path="/image-gallery" element = {<ImageGallery />} />
-        <Route path="/image1" element = {<ImageDetail />} />
+        <Route path ="/" element = {<Welcome /> } />
+        <Route path ="/blogSection" element = {<BlogSection />} />
+        <Route path ="/imageGallery" element = {<ImageGallery />} />
+        <Route path ="/imageDetail" element = {<ImageDetail />} />
       </Routes>
       <MyFooter />
     </Router>
