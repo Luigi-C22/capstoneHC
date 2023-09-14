@@ -58,17 +58,14 @@ function NavigationBar() {
             <Nav.Link href="#" ><Button variant="outline-success">Log In</Button></Nav.Link>
 
             <NavDropdown title={<Button variant="outline-success">Links</Button>} id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3"><Button variant="outline-success">Look inside</Button>
-              </NavDropdown.Item>
-
-              <NavDropdown.Item href="#action4">
-                <Button variant="outline-success">Drive it</Button>
-              </NavDropdown.Item>
-
-              <NavDropdown.Divider />
               <NavDropdown.Item onClick={() => setModalShow(true)}>
                 <Button variant="outline-success">Who we are</Button>
               </NavDropdown.Item>
+
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action3"><Button variant="outline-success">Back Office</Button>
+              </NavDropdown.Item>
+
             </NavDropdown>
 
           </Nav>
