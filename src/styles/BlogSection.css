@@ -56,3 +56,13 @@
     color: #FFF;
     padding: 10px;
 }
+
+.iconStyle {
+    font-size: 40px;
+    border: solid#20a83b 1px ;
+    border-radius: 5px;
+    padding: 3px;
+    text-align: center;
+    color: #04390d;
+    background-color: #ffffff;
+}

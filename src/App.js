@@ -7,6 +7,7 @@ import MyFooter from './components/MyFooter';
 import ImageGallery from './components/ImageGallery';
 import ImageDetail from './components/ImageDetail';
 import BlogSection from './components/BlogSection';
+import BackOffice from './components/BackOffice';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path ="/blogSection" element = {<BlogSection />} />
         <Route path ="/imageGallery" element = {<ImageGallery />} />
         <Route path ="/imageDetail" element = {<ImageDetail />} />
+        <Route path ="/backOffice" element = {<BackOffice />} />
       </Routes>
       <MyFooter />
     </Router>

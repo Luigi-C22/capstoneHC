@@ -10,7 +10,7 @@ function BlogSection() {
 
   useEffect(() => {
     
-     fetch('http://localhost:5050/posts')
+     fetch('http://localhost:5050/posts/')
        .then((response) => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -37,7 +37,8 @@ function BlogSection() {
       
       <div className="card-container">
         {posts.map((post) => (
-          <SingleCard key={post.id}
+          <SingleCard
+           key={post.id}
            carBrand={post.carBrand} 
            carName={post.carName}
            carPicture={post.carPicture}

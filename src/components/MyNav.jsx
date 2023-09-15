@@ -10,6 +10,7 @@ import carLogo from '../assets/logo-trasparente.png';
 import siteName from '../assets/hyperCar-Destine.png';
 import '../styles/MyNav.css';
 import WhoWeAre from './modals/WhoWeAre';
+import { FaHome } from 'react-icons/fa';
 
 
 function NavigationBar() {
@@ -23,6 +24,7 @@ function NavigationBar() {
           {/* l'immagine logo del sito è cliccabile e rimanda alla homepage */}
           <Link to="/">
             <img className='logo-img' src={carLogo} alt="Logo" />
+            <FaHome  className="iconStyle" />
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -63,7 +65,14 @@ function NavigationBar() {
               </NavDropdown.Item>
 
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action3"><Button variant="outline-success">Back Office</Button>
+              <NavDropdown.Item>
+                <Nav.Link>
+                  <Link to="/BackOffice">
+                <Button variant="outline-success">
+                  Back Office
+                  </Button>
+                  </Link>
+                  </Nav.Link>
               </NavDropdown.Item>
 
             </NavDropdown>
