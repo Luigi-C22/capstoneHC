@@ -8,6 +8,7 @@ import ImageGallery from './components/ImageGallery';
 import ImageDetail from './components/ImageDetail';
 import BlogSection from './components/BlogSection';
 import BackOffice from './components/BackOffice';
+import Errorpage from './components/navigation/Errorpage';
 
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
         <Route path ="/imageGallery" element = {<ImageGallery />} />
         <Route path ="/imageDetail" element = {<ImageDetail />} />
         <Route path ="/backOffice" element = {<BackOffice />} />
+        <Route path ="*" element = {<Errorpage />} />
+
       </Routes>
       <MyFooter />
     </Router>

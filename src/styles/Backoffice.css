@@ -1,0 +1,9 @@
+.formBackOffice {
+    margin: 10px;
+    padding: 20px;
+}
+
+.btnStyle {
+    box-shadow: 0 0 10px rgba(33, 218, 82, 0.8);
+    margin: 20px;
+}

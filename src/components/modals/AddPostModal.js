@@ -8,7 +8,7 @@ const AddPostModal = (props) => {
     const [formData, setFormData] = useState({});
     const [file, setFile] = useState(null)
     const [loading, setLoading] = useState(false);
-
+console.log(formData);
     const handleFileChange = (e) => {
         setFile(e.target.files[0]);
     };
@@ -19,10 +19,11 @@ const AddPostModal = (props) => {
         fileData.append('carPicture', file)
 
         try {
-            const response = await fetch('http://localhost:5050/posts/internalUpload', {
+            const response = await fetch('http://localhost:5050/posts/cloudUpload',
+             {
                 method: 'POST',
                 body: fileData,
-            })
+            });
             return await response.json();
         } catch (error) {
             console.error("File upload failed...");
@@ -49,7 +50,7 @@ const AddPostModal = (props) => {
                 });
 
                 if (response.ok) {
-                    props.onHide();
+                    props.onHide(); //chiude il modale dopo aver inviato il post
                 } else {
                     console.error('Failed to save post');
                 }
@@ -132,7 +133,7 @@ const AddPostModal = (props) => {
                         onChange={(e) =>
                             setFormData({
                                 ...formData,
-                                price: e.target.value,
+                                price: Number(e.target.value),
                             })
                         }
                         className='mb-3 m-2'
@@ -178,7 +179,7 @@ const AddPostModal = (props) => {
                 </Form>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="success" type='submit'>Send Post</Button>
+                <Button variant="success" type='submit' onClick={props=handleSubmit}>Send Post</Button>
                 <Button variant="danger" onClick={props.onHide}>Close</Button>
             </Modal.Footer>
         </Modal>

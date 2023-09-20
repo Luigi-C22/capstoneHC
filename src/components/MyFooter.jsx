@@ -20,7 +20,7 @@ const MyFooter = () => {
           </div>
           <div className='col d-flex flex-column socialTxt'>
             <span > Seguici sui Social:</span>
-            <span > Twitter <FaTwitter /></span>
+            <span > X(ex-Twitter) <FaTwitter /></span>
             <span > Instagram <FaInstagram /></span>
             <span > Facebook <FaFacebook /></span>
           </div>
