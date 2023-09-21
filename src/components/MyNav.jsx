@@ -11,12 +11,15 @@ import siteName from '../assets/hyperCar-Destine.png';
 import '../styles/MyNav.css';
 import WhoWeAre from './modals/WhoWeAre';
 import { FaHome } from 'react-icons/fa';
+//import { useSession } from '../middlewares/ProtectedRoutes';
 
 
-function NavigationBar() {
+const NavigationBar = () => {
+
+   /* const session = useSession();  */  //hook per vilualizzare il nome loggato
 
   const [modalShow, setModalShow] = useState(false); //per utilizzare il modale 'Who We Are', inizialmente non visibile
-  
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
@@ -33,13 +36,23 @@ function NavigationBar() {
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: '100px' }}
             navbarScroll
-          >
+          > 
+          
+          {/*  <Nav.Link>
+              <div>
+                {session && <p>Ciao {session.userName} benvenuto su </p>}
+              </div>
+            </Nav.Link> */} 
+
+
             {/* il nome del sito è cliccabile e rimanda sulla homepage */}
             <Nav.Link>
               <Link to="/">
                 <img className='siteName' src={siteName} alt="Site name" />
               </Link>
             </Nav.Link>
+           
+          
 
             {/* riferimenti della navbar */}
             <Nav.Link>
@@ -61,10 +74,10 @@ function NavigationBar() {
             <Nav.Link href="*" ><Button variant="outline-success">Dont'go here</Button></Nav.Link>
 
             <Nav.Link>
-            <Link to="/Login">
-              <Button variant="outline-success" >
-                Log In
-              </Button>
+              <Link to="/Login">
+                <Button variant="outline-success" >
+                  Log In
+                </Button>
               </Link>
             </Nav.Link>
 
@@ -99,7 +112,7 @@ function NavigationBar() {
         </Navbar.Collapse>
       </Container>
       <WhoWeAre show={modalShow} onHide={() => setModalShow(false)} />
-      
+
     </Navbar>
   );
 }

@@ -32,7 +32,7 @@ function WhoWeAre(props) {
         
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button variant="outline-success" onClick={props.onHide}>Close</Button>
       </Modal.Footer>
     </Modal>
   );

@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import '../../styles/Login.css';
-import logoCar from '../../assets/logo-trasparente.png';
+import logoCar from '../../assets/porsche918.png';
 import siteName from '../../assets/hyperCar-Destine.png';
 import axios from 'axios';
 
 
 const Login = () => {
+     const navigate = useNavigate(); 
+
     const [loginFormData, setLoginFormData] = useState({})
 
     const [checkboxChecked, setCheckboxChecked] = useState(false); //verifica che sia spuntato il checkbox
@@ -33,7 +36,9 @@ const Login = () => {
                 .then((res) => {
                     localStorage.setItem('userLoggedIn', JSON.stringify(res.data.token));
                 }
-        )} else {
+        )
+         .then((res) => navigate('/')); 
+    } else {
             setShowAlert(true)
         }
     };
@@ -42,8 +47,8 @@ const Login = () => {
 
         <div className='login-container'>
             <div>
-                <img className='logoModal' src={logoCar} alt="logo car" />
-                <img className='logoModal' src={siteName} alt="Hyper Car" />
+                <img className='headLogo' src={logoCar} alt="logo car" />
+                <img className='headLogo' src={siteName} alt="Hyper Car" />
             </div>
             <form onSubmit={onSubmit}>
                 <Row className="align-items-center">
@@ -85,7 +90,7 @@ const Login = () => {
                         type="checkbox"
                         id="autoSizingCheck"
                         className="mb-2"
-                        label="I accept all condiotions"
+                        label="I accept all conditions"
                         onChange={handleCheckboxChange}
                         checked={checkboxChecked}
                     />

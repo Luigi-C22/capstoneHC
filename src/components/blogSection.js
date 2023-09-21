@@ -34,7 +34,7 @@ function BlogSection() {
 
   return (
     <div>
-      <h1 className='titleStyle'> If you want to sell your old car, post here your offer</h1>
+      <h1 className='titleStyle'> Now you can sell your car! Post here your offer</h1>
 
       {/* Bottone per aprire il modale */}
       <div class="formButtonContainer">
@@ -47,7 +47,7 @@ function BlogSection() {
         <Row className='gap-4'>
         {posts && posts?.posts?.slice(0, 5).map((post) => {
           return (
-            <Col key={post.id} md={2}>
+            <Col key={post.id} md={2} >
               <SingleCard
               key={post.id}
               carBrand={post.carBrand}

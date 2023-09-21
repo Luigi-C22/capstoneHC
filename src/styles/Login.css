@@ -6,8 +6,10 @@
     height: 70vh; /* Altezza del 70% del viewport */
   }
   
-  .logoModal {
-    width: 250px; /* Imposta la larghezza del logo */
+  .headLogo {
+    width: 200px; /* Imposta la larghezza del logo */
+    margin-right: 55px;
+    margin-left: -35px;
   }
   
  

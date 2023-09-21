@@ -12,8 +12,8 @@ import car03 from '../assets/corvette2z06.png';
 import car04 from '../assets/ferrariF12.png';
 import car05 from '../assets/bogattiGold.png';
 import car06 from '../assets/porsche918.png';
-
-
+import car07 from '../assets/RR_ghost.png';
+import car08 from '../assets/SSC-tuatara.png';
 
 const HorizontalCarousel = () => {
   const [cardData, setCardData] = useState([]);
@@ -85,6 +85,12 @@ const HorizontalCarousel = () => {
         </div>
         <div className='p-3 ml-2 gap-2'>
           <img className='galleryStyle img-fluid' src={car06} alt="CarPhoto 6" />
+        </div>
+        <div className='p-3 ml-2 gap-2'>
+          <img className='galleryStyle img-fluid' src={car07} alt="CarPhoto 7" />
+        </div>
+        <div className='p-3 ml-2 gap-2'>
+          <img className='galleryStyle img-fluid' src={car08} alt="CarPhoto 8" />
         </div>
         {/* Aggiungi altre immagini qui*/}
       </Slider>
