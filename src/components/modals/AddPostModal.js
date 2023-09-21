@@ -9,6 +9,7 @@ const AddPostModal = (props) => {
     const [file, setFile] = useState(null)
     const [loading, setLoading] = useState(false);
 console.log(formData);
+
     const handleFileChange = (e) => {
         setFile(e.target.files[0]);
     };
@@ -51,15 +52,16 @@ console.log(formData);
 
                 if (response.ok) {
                     props.onHide(); //chiude il modale dopo aver inviato il post
-                } else {
-                    console.error('Failed to save post');
+                    window.location.reload(); // Effettua il refresh della pagina dopo aver aggiunto un post
+                 } else {
+                    console.error('Failed to save post'); 
                 }
 
-            } catch (error) {
+             } catch (error) {
                 console.error('Failed to save post');
             } finally {
                 setLoading(false);
-            }
+            } 
         } else {
             console.error('Please select at least one file to upload');
             setLoading(false);
@@ -179,7 +181,7 @@ console.log(formData);
                 </Form>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="success" type='submit' onClick={props=handleSubmit}>Send Post</Button>
+                <Button variant="success" type='submit' onClick={handleSubmit}>Send Post</Button>
                 <Button variant="danger" onClick={props.onHide}>Close</Button>
             </Modal.Footer>
         </Modal>

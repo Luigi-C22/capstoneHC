@@ -1,0 +1,13 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    height: 70vh; /* Altezza del 70% del viewport */
+  }
+  
+  .logoModal {
+    width: 250px; /* Imposta la larghezza del logo */
+  }
+  
+ 

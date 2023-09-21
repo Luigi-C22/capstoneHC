@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import carLogo from '../assets/logo-trasparente.png';
 import siteName from '../assets/hyperCar-Destine.png';
 import '../styles/MyNav.css';
@@ -15,8 +15,8 @@ import { FaHome } from 'react-icons/fa';
 
 function NavigationBar() {
 
-  const [modalShow, setModalShow] = useState(false); //per utilizzare il modale, inizialmente non visibile
-
+  const [modalShow, setModalShow] = useState(false); //per utilizzare il modale 'Who We Are', inizialmente non visibile
+  
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
@@ -24,7 +24,7 @@ function NavigationBar() {
           {/* l'immagine logo del sito è cliccabile e rimanda alla homepage */}
           <Link to="/">
             <img className='logo-img' src={carLogo} alt="Logo" />
-            <FaHome  className="iconStyle" />
+            <FaHome className="iconStyle" />
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -45,7 +45,7 @@ function NavigationBar() {
             <Nav.Link>
               <Link to="/ImageGallery">
                 <Button variant="outline-success">
-                  Take a look to our models
+                  New models
                 </Button>
               </Link>
             </Nav.Link>
@@ -57,7 +57,16 @@ function NavigationBar() {
                 </Button>
               </Link>
             </Nav.Link>
-            <Nav.Link href="*" ><Button variant="outline-success">Log In</Button></Nav.Link>
+
+            <Nav.Link href="*" ><Button variant="outline-success">Dont'go here</Button></Nav.Link>
+
+            <Nav.Link>
+            <Link to="/Login">
+              <Button variant="outline-success" >
+                Log In
+              </Button>
+              </Link>
+            </Nav.Link>
 
             <NavDropdown title={<Button variant="outline-success">Links</Button>} id="navbarScrollingDropdown">
               <NavDropdown.Item onClick={() => setModalShow(true)}>
@@ -68,11 +77,11 @@ function NavigationBar() {
               <NavDropdown.Item>
                 <Nav.Link>
                   <Link to="/BackOffice">
-                <Button variant="outline-success">
-                  Back Office
-                  </Button>
+                    <Button variant="outline-success">
+                      Back Office
+                    </Button>
                   </Link>
-                  </Nav.Link>
+                </Nav.Link>
               </NavDropdown.Item>
 
             </NavDropdown>
@@ -90,7 +99,7 @@ function NavigationBar() {
         </Navbar.Collapse>
       </Container>
       <WhoWeAre show={modalShow} onHide={() => setModalShow(false)} />
-
+      
     </Navbar>
   );
 }
