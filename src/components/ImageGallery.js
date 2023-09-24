@@ -23,7 +23,7 @@ const HorizontalCarousel = () => {
   useEffect(() => {
     const carsData = async () => {
       try {
-        const response = await fetch('http://localhost:5050/backoffice/');
+        const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/backoffice/`);
         if (!response.ok) {
           throw new Error('Error in request');
         }

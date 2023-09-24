@@ -17,7 +17,7 @@ function BlogSection() {
   console.log(posts);
   useEffect(() => {
 
-    fetch('http://localhost:5050/posts/')
+    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/posts/`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

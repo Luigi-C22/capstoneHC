@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import verifyToken from '../../../../be/middlewares/verifyToken';
+
 
 const AddPostModal = (props) => {
     const [formData, setFormData] = useState({});
@@ -20,9 +20,9 @@ console.log(formData);
         fileData.append('carPicture', file)
 
         try {
-            const response = await fetch('http://localhost:5050/posts/cloudUpload',
+            const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/posts/cloudUpload`,
              {
-                method: 'POST',
+                method:'POST',
                 body: fileData,
             });
             return await response.json();
@@ -42,7 +42,7 @@ console.log(formData);
                     ...formData,
                     carPicture: uploadedFile.carPicture,
                 };
-                const response = await fetch('http://localhost:5050/posts', {
+                const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/posts`, {
                     method: 'POST',
                     body: JSON.stringify(postFormData),
                     headers: {
