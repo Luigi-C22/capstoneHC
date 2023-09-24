@@ -1,0 +1,20 @@
+.cardTitle {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    font-style: italic;
+    font-weight: 800;
+    text-shadow: 0px 3px 4px #1C6EA4;
+}
+
+.refText{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 100;
+}
+
+.detailText{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    color:rgb(4, 4, 148)
+}
