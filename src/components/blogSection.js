@@ -7,8 +7,6 @@ import 'react-responsive-pagination/themes/classic.css';
 import '../styles/BlogSection.css';
 
 
-
-
 function BlogSection() {
   const [currentPage, setCurrentPage] = useState(8); //pagination
   const totalPages = 10;
@@ -41,35 +39,36 @@ function BlogSection() {
         <button className='formButton' onClick={() => setShowModal(true)}>Open form to publish</button>
       </div>
       {/* Visualizza le cards dei post */}
-      
+
 
       <div className="card-container mb-4 mr-3 d-flex justify-content-center">
         <Row className='gap-4'>
-        {posts && posts?.posts?.slice(0, 5).map((post) => {
-          return (
-            <Col key={post.id} md={2} >
-              <SingleCard
-              key={post.id}
-              carBrand={post.carBrand}
-              carName={post.carName}
-              carPicture={post.carPicture}
-              year={post.year}
-              price={post.price}
-              contact={post.contact}
-              description={post.description}
-              authorName={post.user}
-            />
-            </Col>
-          );
+          {posts && posts?.posts?.slice(0, 5).map((post) => {
+            return (
+              <Col key={post.id} md={2} >
+                
+                <SingleCard
+                  key={post.id}
+                  carBrand={post.carBrand}
+                  carName={post.carName}
+                  carPicture={post.carPicture}
+                  year={post.year}
+                  price={post.price}
+                  contact={post.contact}
+                  description={post.description}
+                  authorName={post.user}
+                />
+              </Col>
+            );
 
-        })}
+          })}
         </Row>
       </div>
       <ResponsivePagination
-      current={currentPage}
-      total={totalPages}
-      onPageChange={setCurrentPage}
-    />
+        current={currentPage}
+        total={totalPages}
+        onPageChange={setCurrentPage}
+      />
 
       {/* Modale per aggiungere un post */}
       <AddPostModal show={showModal} onHide={() => setShowModal(false)} />
