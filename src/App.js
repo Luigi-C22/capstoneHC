@@ -11,7 +11,7 @@ import BackOffice from './components/BackOffice';
 import Errorpage from './components/navigation/Errorpage';
 import Login from './components/navigation/Login';
 import Protectedroutes from './middlewares/ProtectedRoutes';
-
+import Success from './components/navigation/Success';
 
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
         <Route path ="/blogSection" element = {<BlogSection />} />
         <Route path ="/imageGallery" element = {<ImageGallery />} />
         <Route path ="/login" element = {<Login />} />
+        <Route path ="/success" element={<Success />} />
         <Route element = {<Protectedroutes />}>
           <Route path ="/backOffice" element = {<BackOffice />} />
         </Route>

@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
+import { FaGithub } from "react-icons/fa";
 import '../../styles/Login.css';
 import logoCar from '../../assets/porsche918.png';
 import siteName from '../../assets/hyperCar-Destine.png';
@@ -39,9 +40,13 @@ const Login = () => {
         )
          .then((res) => navigate('/')); 
     } else {
-            setShowAlert(true)
+            setShowAlert(true) //alert per mancata spunta del checkbox
         }
     };
+
+    const handleLoginWithGithub = () => {
+        window.location.href = `http://localhost:5050/auth/github`
+    }
 
     return (
 
@@ -84,6 +89,7 @@ const Login = () => {
                             Log In
                         </Button>
                     </Col>
+                    
                 </Row>
                 <Col xs="auto">
                     <Form.Check
@@ -96,6 +102,13 @@ const Login = () => {
                     />
                 </Col>
             </form>
+            <Col xs="auto">
+                        <Button
+                        onClick = {handleLoginWithGithub}
+                        type="submit" className='p-2' variant='outline-success' >
+                            Log In with GitHub <FaGithub style={{ fontSize: '24px' }} className='text-black' />
+                        </Button>
+                    </Col>
             {showAlert && (
                 <Alert variant="danger" onClose={() => setShowAlert(false)} dismissible>
                     <Alert.Heading>Warning please!</Alert.Heading>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-
+import verifyToken from '../../../../be/middlewares/verifyToken';
 
 const AddPostModal = (props) => {
     const [formData, setFormData] = useState({});
@@ -47,6 +47,7 @@ console.log(formData);
                     body: JSON.stringify(postFormData),
                     headers: {
                         'Content-type': 'application/json',
+                        
                     },
                 });
 

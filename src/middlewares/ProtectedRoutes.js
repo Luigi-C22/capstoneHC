@@ -25,7 +25,7 @@ export const useSession = () => {
 
 const ProtectedRoutes = () => {
 const isAuthorized = auth();
-const session = useSession();
+/* const session = useSession(); */
 
 return isAuthorized ? <Outlet /> : <Login />;
 }
