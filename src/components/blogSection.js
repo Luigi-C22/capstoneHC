@@ -9,10 +9,11 @@ import '../styles/BlogSection.css';
 
 function BlogSection() {
   const [currentPage, setCurrentPage] = useState(8); //pagination
-  const totalPages = 10;
+  const totalPages = 15;
   const [posts, setPosts] = useState([]);
   const [showModal, setShowModal] = useState(false);
   console.log(posts);
+  
   useEffect(() => {
 
     fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/posts/`)
@@ -69,7 +70,6 @@ function BlogSection() {
         total={totalPages}
         onPageChange={setCurrentPage}
       />
-
       {/* Modale per aggiungere un post */}
       <AddPostModal show={showModal} onHide={() => setShowModal(false)} />
     </div>
