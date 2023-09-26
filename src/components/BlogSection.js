@@ -42,11 +42,11 @@ function BlogSection() {
       {/* Visualizza le cards dei post */}
 
 
-      <div className="card-container mb-4 mr-3 d-flex justify-content-center">
+      <div className="card-container  mb-4">
         <Row className='gap-4'>
           {posts && posts?.posts?.slice(0, 5).map((post) => {
             return (
-              <Col key={post.id} md={2} >
+              <Col key={post.id} md={3} >
                 
                 <SingleCard
                   key={post.id}

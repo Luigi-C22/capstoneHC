@@ -9,6 +9,12 @@
         0 0 75px #49ff18
 }
 
+.card-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
 .spinStyle {
     position: fixed;
     top: 50%;

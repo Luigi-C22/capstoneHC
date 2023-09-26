@@ -3,11 +3,13 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
+const token = JSON.parse(localStorage.getItem('userLoggedIn'));
 
 const AddPostModal = (props) => {
     const [formData, setFormData] = useState({});
     const [file, setFile] = useState(null)
     const [loading, setLoading] = useState(false);
+
 console.log(formData);
 
     const handleFileChange = (e) => {
@@ -21,7 +23,11 @@ console.log(formData);
 
         try {
             const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/posts/cloudUpload`,
-             {
+             { headers: {
+                'Authorization': 
+                `Bearer ${token}`},
+                //'Content-Type': 'multipart/form-data',
+
                 method:'POST',
                 body: fileData,
             });
@@ -46,6 +52,9 @@ console.log(formData);
                     method: 'POST',
                     body: JSON.stringify(postFormData),
                     headers: {
+                        
+                            'Authorization': 
+                            `Bearer ${token}`,
                         'Content-type': 'application/json',
                         
                     },
