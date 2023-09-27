@@ -20,9 +20,10 @@ function App() {
       <NavigationBar />
       <Routes>
         <Route path ="/" element = {<Welcome /> } />
+        <Route path ="/login" element = {<Login />} />
         <Route path ="/blogSection" element = {<BlogSection />} />
         <Route path ="/imageGallery" element = {<ImageGallery />} />
-        <Route path ="/login" element = {<Login />} />
+        
         <Route path ="/success" element={<Success />} />
         <Route element = {<Protectedroutes />}>
           <Route path ="/backOffice" element = {<BackOffice />} />

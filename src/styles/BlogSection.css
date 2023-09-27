@@ -11,8 +11,13 @@
 
 .card-container {
     display: flex;
-    overflow-x: auto;
+    overflow-x: hidden;
     white-space: nowrap;
+  }
+
+  .card-container .card {
+    flex: 0 0 auto; /* Non flessibile, mantenere la larghezza della card */
+    margin-right: 10px; /* Margine tra le card */
   }
 
 .spinStyle {
@@ -57,7 +62,7 @@
     background: #147530;
 }
 
-.galleryStyle {
+.galleryStyle { /* galleria della pagina ImageGallery */
     object-fit: scale-down;
     margin: 2%;
     border-radius: 8%;

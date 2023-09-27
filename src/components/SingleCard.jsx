@@ -21,7 +21,7 @@ const SingleCard = ({
     };
 
     return (
-        <Card className={`mx-auto 
+        <Card className={`mx-auto p-3
         ${disappear ? 'disappear' : ''} /* fa sparire la card */
         ${like ? 'liked' : ''} /* aggiunge il cuore alla card */
         cardWithShadow`}
@@ -36,6 +36,7 @@ const SingleCard = ({
                     <span className='refText'> Description:</span><br></br><span className='detailText'>{description}</span>
                 </Card.Text>
             </Card.Body>
+            
             <Button variant="outline-success" onclick={handleLikeClick}>Like</Button>
             <Button variant="outline-danger" onClick={handleNotLikeClick}>Not Like</Button>
             {like && <FaHeart className="heartIcon" />}

@@ -41,9 +41,9 @@
 
 .heartIcon {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    bottom: 50px;
+    right: 20px;
     color: red;
-    font-size: 54px;
+    font-size: 84px;
     z-index: 999;
   }
