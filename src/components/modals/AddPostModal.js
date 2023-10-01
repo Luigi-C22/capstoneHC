@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import axios from 'axios';
+
+
 
 const token = JSON.parse(localStorage.getItem('userLoggedIn'));
 
@@ -18,22 +21,24 @@ console.log(formData);
 
     //funzione che fa l'upload del file immagine 
     const uploadFile = async (file) => {
-        const fileData = new FormData()
-        fileData.append('carPicture', file)
+        const formData = new FormData();
+        formData.append('carPicture', file);
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/posts/cloudUpload`,
-             { headers: {
+            const response = await axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}posts/cloudUpload`, formData,
+             {
+                headers: {
+                 'Content-Type': 'multipart/form-data',   
                 'Authorization': 
-                `Bearer ${token}`},
-                //'Content-Type': 'multipart/form-data',
-
-                method:'POST',
-                body: fileData,
+                `Bearer ${token}`
+            }
+                
+                
             });
-            return await response.json();
+            return  response.data;
         } catch (error) {
-            console.error("File upload failed...");
+            console.error("File upload failed...", error);
+            throw error;
         }
     }
 
@@ -48,7 +53,7 @@ console.log(formData);
                     ...formData,
                     carPicture: uploadedFile.carPicture,
                 };
-                const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/posts`, {
+                const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}posts`, {
                     method: 'POST',
                     body: JSON.stringify(postFormData),
                     headers: {

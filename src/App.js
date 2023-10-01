@@ -18,21 +18,23 @@ function App() {
   return (
     <Router>
       <NavigationBar />
-      <Routes>
-        <Route path ="/" element = {<Welcome /> } />
-        <Route path ="/login" element = {<Login />} />
-        <Route path ="/blogSection" element = {<BlogSection />} />
-        <Route path ="/imageGallery" element = {<ImageGallery />} />
-        
-        <Route path ="/success" element={<Success />} />
-        <Route element = {<Protectedroutes />}>
-          <Route path ="/backOffice" element = {<BackOffice />} />
-        </Route>
-        <Route path ="/imageDetail" element = {<ImageDetail />} />
-        
-        <Route path ="*" element = {<Errorpage />} />
+      
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/blogSection" element={<BlogSection />} />
+          <Route path="/imageGallery" element={<ImageGallery />} />
 
-      </Routes>
+          <Route path="/success" element={<Success />} />
+          <Route element={<Protectedroutes />}>
+            <Route path="/backOffice" element={<BackOffice />} />
+          </Route>
+          <Route path="/imageDetail" element={<ImageDetail />} />
+
+          <Route path="*" element={<Errorpage />} />
+
+        </Routes>
+      
       <MyFooter />
     </Router>
   );

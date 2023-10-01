@@ -11,12 +11,13 @@
 
 .card-container {
     display: flex;
+    justify-content: center;
     overflow-x: hidden;
     white-space: nowrap;
   }
 
   .card-container .card {
-    flex: 0 0 auto; /* Non flessibile, mantenere la larghezza della card */
+    /*flex: 0 0 auto;  Non flessibile, mantenere la larghezza della card */
     margin-right: 10px; /* Margine tra le card */
   }
 
@@ -64,7 +65,7 @@
 
 .galleryStyle { /* galleria della pagina ImageGallery */
     object-fit: scale-down;
-    margin: 2%;
+    margin: 1%;
     border-radius: 8%;
     -webkit-box-shadow: 0px 0px 11px 4px rgba(0, 0, 0, 0.86);
     box-shadow: 0px 0px 11px 4px rgba(0, 0, 0, 0.86);
@@ -74,9 +75,9 @@
 .galleryStyle {
     background-color: #1C6EA4;
     display: block;
-    margin: 50px auto 0;
-    width: 500px;
-    height: 300px;
+    margin: 35px auto 0;
+    width: 460px;
+    height: 270px;
     color: #FFF;
     padding: 10px;
 }

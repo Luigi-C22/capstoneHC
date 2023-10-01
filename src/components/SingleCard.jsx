@@ -25,7 +25,7 @@ const SingleCard = ({
         ${disappear ? 'disappear' : ''} /* fa sparire la card */
         ${like ? 'liked' : ''} /* aggiunge il cuore alla card */
         cardWithShadow`}
-            style={{ width: '18rem', height: '32rem', overflow: 'hidden', marginLeft: '1rem', marginRight: '1rem' }}>
+            style={{ width: '100%', minWidth:'300px', height: '32rem', overflow: 'hidden', marginLeft: '1rem', marginRight: '1rem' }}>
             <Card.Img variant="top" src={carPicture} alt={`${carBrand} ${carName}`} />
             <Card.Body style={{ maxHeight: '25rem', overflow: 'hidden' }}>
                 <Card.Title className='cardTitle' >{carBrand} {carName}</Card.Title>

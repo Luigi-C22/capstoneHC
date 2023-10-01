@@ -21,7 +21,7 @@ const NavigationBar = () => {
   const [modalShow, setModalShow] = useState(false); //per utilizzare il modale 'Who We Are', inizialmente non visibile
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary position-sticky z-index-999">
       <Container fluid>
         <Navbar.Brand>
           {/* l'immagine logo del sito è cliccabile e rimanda alla homepage */}

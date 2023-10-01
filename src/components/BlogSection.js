@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import SingleCard from './SingleCard';
 import AddPostModal from './modals/AddPostModal';
 import { Row, Col, Modal} from 'react-bootstrap';
@@ -8,14 +11,18 @@ import '../styles/BlogSection.css';
 import ImageDetail from './ImageDetail';
 
 function BlogSection() {
-  const [currentPage, setCurrentPage] = useState(8); //pagination
-  const totalPages = 8;
+  const [currentPage, setCurrentPage] = useState(1); //pagination
+  
   const [posts, setPosts] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [showDetailModal, setShowDetailModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null); //richiama la card in un modale per vedere i dettagli
+ 
   console.log(posts);
 
+  const handlePageChange = (value) => {
+    setCurrentPage(value)
+}
   const handleCardClick = (image) => {
     setSelectedImage(image);
      setShowDetailModal(true);
@@ -23,7 +30,7 @@ function BlogSection() {
 
   useEffect(() => {
 
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/posts/`)
+    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}posts?page=${currentPage}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -36,7 +43,7 @@ function BlogSection() {
       .catch((error) => {
         console.error('Errore nella richiesta', error);
       });
-  }, []);
+  }, [currentPage]);
 
   
 
@@ -51,11 +58,12 @@ function BlogSection() {
       {/* Visualizza le cards dei post */}
 
 
-      <div className="card-container  p-4">
-        <Row className='gap-4'>
-          {posts && posts?.posts?.slice(0, 5).map((post) => {
+      <div  className=" container d-flex justify-content-center mt-3 mb-3">
+        <Row>
+          {posts && posts?.posts?.slice(0, 4).map((post) => {
+            
             return (
-              <Col key={post.id} md={3} >
+              <Col key={post.id} md={3}>
                 
                 <SingleCard
                   key={post.id}
@@ -77,8 +85,8 @@ function BlogSection() {
       </div>
       <ResponsivePagination
         current={currentPage}
-        total={totalPages}
-        onPageChange={setCurrentPage}
+        total={posts && posts.totalPages}
+        onPageChange={handlePageChange}
       />
       {/* Modale per aggiungere un post */}
       <AddPostModal show={showModal} onHide={() => setShowModal(false)} />

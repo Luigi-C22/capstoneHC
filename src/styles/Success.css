@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.loggedInForm {
+    margin-top: 10%;
+    width: 450px;
+    height: 300px;
+    border-radius: 3%;
+    /* background-color: #83f39c; 
+    border: 1px solid #055524;  */ /*sfondo colorato del div*/
+    background-image: url('https://i0.wp.com/fuoripista.net/wp-content/uploads/2021/09/Sv-1024x575.jpg?ssl=1'); /* sfondo del div con immagine */
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(15, 10, 3, 0.8); /*ombreggiatura*/
+}
+
+.loggedText {
+    border-radius: 8px;
+    color: #FFF;
+    font-size: 20px;
+    text-align: left;
+    background-color: #232323;
+    text-shadow: 0 0 5px #FFF, 
+    0 0 10px #FFF, 0 0 15px #FFF, 
+    0 0 20px #49ff18, 0 0 30px #49FF18, 
+    0 0 40px #49FF18, 0 0 55px #49FF18, 
+    0 0 75px #49ff18
+        
+}

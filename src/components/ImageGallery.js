@@ -14,16 +14,24 @@ import car05 from '../assets/bogattiGold.png';
 import car06 from '../assets/porsche918.png';
 import car07 from '../assets/RR_ghost.png';
 import car08 from '../assets/SSC-tuatara.png';
+import car09 from '../assets/trionNemesis03.png';
+import car10 from '../assets/astonMartinDB9.png';
+import car11 from '../assets/lotusEvija.png';
+import car12 from '../assets/gallardo02.png';
+import car13 from '../assets/gallardo01.png';
+import car14 from '../assets/Ferrari-458Spider.png';
+import car15 from '../assets/Lamborghini-Urus.png';
+import car16 from '../assets/audiR8.png';
 
 const HorizontalCarousel = () => {
   const [cardData, setCardData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-
+ 
   useEffect(() => {
     const carsData = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/backoffice/`);
+        const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}backoffice`);
         if (!response.ok) {
           throw new Error('Error in request');
         }
@@ -41,7 +49,7 @@ const HorizontalCarousel = () => {
   }, []);
 
   if (isLoading) {
-    return <div>Caricamento in corso...
+    return <div>Wait, loading cars...
       <Spinner className='spinStyle'
       animation="border" variant="danger" role="status">
       </Spinner>
@@ -51,7 +59,7 @@ const HorizontalCarousel = () => {
   if (isError) {
     return <div>Si è verificato un errore durante il recupero dei dati.</div>;
   }
-
+ 
 
   const settings = {
     dots: false,
@@ -64,7 +72,7 @@ const HorizontalCarousel = () => {
   };
 
   return (
-
+<div>
     <div>
       <h2 className='titleStyle'>Our models in the store. Come and try them</h2>
       <Slider {...settings}>
@@ -112,10 +120,40 @@ const HorizontalCarousel = () => {
         ))} */}
       {/* </Slider> */}
 
-
-
     </div>
+    <div className='mt-1'>
+    
+    <Slider {...settings}>
+      <div className='p-3 ml-2 gap-2'>
+        <img className='galleryStyle img-fluid' src={car09} alt="CarPhoto 9" />
+      </div>
+      <div className='p-3 ml-2 gap-2'>
+        <img className='galleryStyle img-fluid' src={car10} alt="CarPhoto 10" />
+      </div>
+      <div className='p-3 ml-2 gap-3'>
+        <img className='galleryStyle img-fluid' src={car11} alt="CarPhoto 11" />
+      </div>
+      <div className='p-3 ml-2 gap-2'>
+        <img className='galleryStyle img-fluid' src={car12} alt="CarPhoto 12" />
+      </div>
+      <div className='p-3 ml-2 gap-2'>
+        <img className='galleryStyle img-fluid' src={car13} alt="CarPhoto 13" />
+      </div>
+      <div className='p-3 ml-2 gap-2'>
+        <img className='galleryStyle img-fluid' src={car14} alt="CarPhoto 14" />
+      </div>
+      <div className='p-3 ml-2 gap-2'>
+        <img className='galleryStyle img-fluid' src={car15} alt="CarPhoto 15" />
+      </div>
+      <div className='p-3 ml-2 gap-2'>
+        <img className='galleryStyle img-fluid' src={car16} alt="CarPhoto 16" />
+      </div>
+      {/* Aggiungi altre immagini qui*/}
+    </Slider>
+   
 
+  </div>
+  </div>
 
   );
 };

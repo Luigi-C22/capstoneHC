@@ -8,11 +8,11 @@ const Welcome = () => {
 
         return (
 
-            <Carousel className='mb-3' >
+            <Carousel className='mb-3 mx-auto mt-5' style={{width: '80%'}} >
                 {carouselItems.map((item) => {
                     return (
-                        <Carousel.Item  className='carousel-centered' key={nanoid()}>
-                            <img className='d-block w-100 carousel-image'  src={item.src} alt={item.alt} />
+                        <Carousel.Item   key={nanoid()}>
+                            <img className='d-block w-100  carousel-image'  src={item.src} alt={item.alt} />
                             <Carousel.Caption>
                                 <h3 className='carouselTitles light-text'>{item.captionTitle}</h3>
                                 <p className='smallTitle light-text'>{item.captionDescription}</p>

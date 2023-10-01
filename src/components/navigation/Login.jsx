@@ -12,6 +12,7 @@ import siteName from '../../assets/hyperCar-Destine.png';
 import axios from 'axios';
 
 
+
 const Login = () => {
      const navigate = useNavigate(); 
 
@@ -33,19 +34,19 @@ const Login = () => {
             
             //logica del Login
             await axios
-                .post(`${process.env.REACT_APP_SERVER_BASE_URL}/login`, loginFormData)
+                .post(`${process.env.REACT_APP_SERVER_BASE_URL}login`, loginFormData)
                 .then((res) => {
                     localStorage.setItem('userLoggedIn', JSON.stringify(res.data.token));
                 }
         )
-         .then((res) => navigate('/')); 
+         .then((res) => navigate('/Success')); 
     } else {
             setShowAlert(true) //alert per mancata spunta del checkbox
         }
     };
 
     const handleLoginWithGithub = () => {
-        window.location.href = `${process.env.REACT_APP_SERVER_BASE_URL}/auth/github`
+        window.location.href = `${process.env.REACT_APP_SERVER_BASE_URL}auth/github`
     }
 
     return (
