@@ -63,7 +63,9 @@
     background: #147530;
 }
 
-.galleryStyle { /* galleria della pagina ImageGallery */
+
+/* Stili della galleria nella pagina ImageGallery */
+.galleryStyle { 
     object-fit: scale-down;
     margin: 1%;
     border-radius: 8%;
@@ -90,4 +92,32 @@
     text-align: center;
     color: #04390d;
     background-color: #ffffff;
+}
+
+
+/* Stili della pagina ImageDetail*/
+.detailStyle { 
+    border-radius: 40px;
+    background-color: #1C6EA4;
+    display: block;
+    margin: 35px auto 0;
+    width: 920px;
+    height: 540px;
+    color: #FFF;
+    padding: 10px
+    
+}
+
+.spanText {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.cardTitle {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    font-style: italic;
+    font-weight: 800;
+    text-shadow: 0px 3px 4px #1C6EA4;
 }
