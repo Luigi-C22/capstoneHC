@@ -25,7 +25,7 @@ console.log(formData);
         formData.append('carPicture', file);
 
         try {
-            const response = await axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}posts/cloudUpload`, formData,
+            const response = await axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/posts/cloudUpload`, formData,
              {
                 headers: {
                  'Content-Type': 'multipart/form-data',   
@@ -53,7 +53,7 @@ console.log(formData);
                     ...formData,
                     carPicture: uploadedFile.carPicture,
                 };
-                const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}posts`, {
+                const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/posts`, {
                     method: 'POST',
                     body: JSON.stringify(postFormData),
                     headers: {

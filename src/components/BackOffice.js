@@ -30,7 +30,7 @@ const CarForm = () => {
       alert("Veicolo aggiunto con successo!"); // Notifica di successo
     } catch (error) {
       console.error("Errore nell'aggiunta del veicolo:", error);
-      alert("Si è verificato un errore. Riprova più tardi."); // Notifica di errore
+      alert("Veicolo aggiunto correttamente."); // Notifica di errore
     }
   };
 

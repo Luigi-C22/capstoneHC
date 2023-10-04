@@ -34,7 +34,7 @@ const Login = () => {
             
             //logica del Login
             await axios
-                .post(`${process.env.REACT_APP_SERVER_BASE_URL}login`, loginFormData)
+                .post(`${process.env.REACT_APP_SERVER_BASE_URL}/login`, loginFormData)
                 .then((res) => {
                     localStorage.setItem('userLoggedIn', JSON.stringify(res.data.token));
                 }
@@ -46,7 +46,7 @@ const Login = () => {
     };
 
     const handleLoginWithGithub = () => {
-        window.location.href = `${process.env.REACT_APP_SERVER_BASE_URL}auth/github`
+        window.location.href = `${process.env.REACT_APP_SERVER_BASE_URL}/auth/github`
     }
 
     return (

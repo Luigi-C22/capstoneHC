@@ -30,7 +30,7 @@ function BlogSection() {
 
   useEffect(() => {
 
-    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}posts?page=${currentPage}`)
+    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/posts?page=${currentPage}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

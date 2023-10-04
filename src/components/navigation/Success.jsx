@@ -20,7 +20,7 @@ useEffect(() => {
     //ritardo del reindirizzamento alla homepage
     const timer = setTimeout(() => {
         navigate('/');
-    }, 8000);
+    }, 5000);
 
     //elimina il timer quando il componente viene smontato
     return () => clearTimeout(timer);

@@ -81,7 +81,7 @@ const NavigationBar = () => {
               </Link>
             </Nav.Link>
 
-            <NavDropdown title={<Button variant="outline-success">Links</Button>} id="navbarScrollingDropdown">
+            <NavDropdown  title={<Button variant="outline-success">Links</Button>} id="navbarScrollingDropdown">
               <NavDropdown.Item onClick={() => setModalShow(true)}>
                 <Button variant="outline-success">Who we are</Button>
               </NavDropdown.Item>
