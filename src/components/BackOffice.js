@@ -30,11 +30,15 @@ const CarForm = () => {
       alert("Veicolo aggiunto con successo!"); // Notifica di successo
     } catch (error) {
       console.error("Errore nell'aggiunta del veicolo:", error);
-      alert("Veicolo aggiunto correttamente."); // Notifica di errore
+      alert("Warning!! An Error was occured."); // Notifica di errore
     }
   };
 
   return (
+    <div>
+    <h2 className="titleText">Admin can add new models here</h2>
+    <div className="bg-form d-flex justify-content-center align-items-center">
+      
     <Container className="formBackOffice" >
       <Form className="formBackOffice" onSubmit={handleSubmit}>
         <Row>
@@ -110,6 +114,8 @@ const CarForm = () => {
         </Button>
       </Form>
     </Container>
+    </div>
+    </div>
   );
 };
 

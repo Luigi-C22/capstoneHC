@@ -15,7 +15,6 @@ const MyFooter = () => {
         <div className="row">
           <div className='col d-flex flex-column socialTxt'>
             <span > Terms & Conditions</span>
-
             <span > Partners </span>
             <span > Work with Us </span>
           </div>

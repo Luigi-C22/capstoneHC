@@ -8,7 +8,7 @@ const Welcome = () => {
 
         return (
 
-            <Carousel className='mb-3 mx-auto mt-5' style={{width: '80%'}} >
+            <Carousel className='mt -3 mb-3 mx-auto mt-5' style={{width: '80%'}} >
                 {carouselItems.map((item) => {
                     return (
                         <Carousel.Item   key={nanoid()}>

@@ -47,7 +47,9 @@ const Login = () => {
 
     const handleLoginWithGithub = () => {
         window.location.href = `${process.env.REACT_APP_SERVER_BASE_URL}/auth/github`
-    }
+    };
+
+    
 
     return (
 

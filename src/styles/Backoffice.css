@@ -1,3 +1,36 @@
+.bg-form {
+    width: 50%;
+height: 50%;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    line-height: 16px;
+    padding: 6px;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(to right, rgb(28, 110, 164) 0%,
+            rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    border: 2px solid rgb(28, 110, 164);
+   margin: 0 auto;
+}
+
+.titleText {
+    text-align: center;
+    color: #FFF;
+    background-color: #232323;
+    text-shadow: 0 0 5px #FFF,
+        0 0 10px #FFF, 0 0 15px #FFF,
+        0 0 20px #49ff18, 0 0 30px #49FF18,
+        0 0 40px #49FF18, 0 0 55px #49FF18,
+        0 0 75px #49ff18
+}
+
+
 .formBackOffice {
     margin: 10px;
     padding: 20px;
@@ -5,5 +38,7 @@
 
 .btnStyle {
     box-shadow: 0 0 10px rgba(33, 218, 82, 0.8);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 20px;
 }

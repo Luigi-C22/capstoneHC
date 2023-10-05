@@ -3,6 +3,7 @@
   top: 0;
   background-color: #fff; /* Colore di sfondo della navbar */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+  z-index: 10;
 }
 
 .logo-img {
